@@ -1,0 +1,63 @@
+
+<div class="row animate__animated  animate__fadeIn animate__slow mt-5 " *ngIf="pelicula">
+    <div class="col-md-6">
+        <!-- Imagen -->
+        <img [src]="pelicula.poster_path | poster" 
+             [alt]="pelicula.title"
+             class="img-thumbnail"
+             >
+    </div>
+    <div class="col-md-6 mt-2 text-left animate__animated  animate__fadeIn animate__slow">
+        <!-- Detalle -->
+        <h3 class="text-uppercase pb-3">{{pelicula.title}}</h3>
+
+        <div class="row text-left">
+         
+            <div class="d-flex pl-5">
+              
+                <star-rating 
+                        value="{{pelicula.vote_average}}" 
+                        totalstars="10" 
+                        checkedcolor="yellow" 
+                        uncheckedcolor="gray" 
+                        size="25px"
+                        readonly="false" 
+                        >   
+                </star-rating>
+                <div class="h3 text-light">
+                    <span class="circle badge-secondary rounded-circle p-2">
+                        {{pelicula.vote_average | number:'1.1-2' }}
+                
+                    </span>
+                
+                </div>
+            </div>
+              
+        </div>
+        <div class="row mt-2">
+            <div class="col ">
+                <p class="text-light text-white font-weight-lighter  text-justify descripcion-movie">
+                    {{ pelicula.overview}}
+                </p>
+                    
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col">
+                <button 
+                    (click)="onRegresar()"
+                    class="btn btn-outline-danger btn-block">
+                    Regresar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SlideShows de cast de artistas -->
+<div class="row mt-5 mb-5" *ngIf="cast.length > 0">
+    <div class="col">
+        <app-cast-slideshow [cast]="cast"></app-cast-slideshow>
+    </div>
+</div>

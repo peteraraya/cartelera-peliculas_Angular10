@@ -1,0 +1,12 @@
+
+<div class="mt-4"></div>
+
+<h3>Buscar películas <small class="text-capitalize text-warning">{{ texto }}</small></h3>
+<hr />
+
+<div class="row animate__animated  animate__fadeIn">
+    <div class="col">
+    <app-peliculas-poster-grid *ngIf="movies.length > 0" [movies]="movies">
+    </app-peliculas-poster-grid>
+    </div>
+</div>

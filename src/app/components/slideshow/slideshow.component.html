@@ -1,0 +1,35 @@
+<!-- Slider main container -->
+<div class="swiper-container  shadow-lg animate__animated animate__fadeIn">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper img-fluid">
+        <!-- Slides -->
+        <div 
+            *ngFor="let movie of movies"
+            class="swiper-slide"
+            [ngStyle]="{
+                'height': '50vh',
+                'background-size': 'cover',
+                'background-repeat': 'no-repeat',
+                'background-image':'url(https://image.tmdb.org/t/p/w500' + movie.backdrop_path +')'
+            }"
+            >
+        <div class="movie-description">
+            <h3>
+                {{ movie.title }}
+            </h3>
+            <p class="pl-3">
+                {{ movie.overview | slice:0:130 }} ...
+            </p>
+        </div>
+           
+        </div>
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div (click)="onSlidePrev()" class="swiper-button-prev"></div>
+    <div (click)="onSlideNext()" class="swiper-button-next"></div>
+
+
+</div>

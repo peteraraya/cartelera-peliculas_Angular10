@@ -1,0 +1,22 @@
+<h1 class="font-weight-bold  ">
+    Cartelera
+</h1>
+<!-- Validación para mostrar info cuando tenga data -->
+<div class="row" *ngIf="movies.length > 0">
+    <div class="col ">
+        <app-slideshow [movies]="moviesSlideshow"></app-slideshow>
+    </div>
+</div>
+
+<h2 class="mt-5">
+    Películas
+</h2>
+
+<app-peliculas-poster-grid 
+    *ngIf="movies.length > 0"
+    [movies]="movies"
+>
+</app-peliculas-poster-grid>
+
+
+<!-- con [] envio variable al componente que lo recibe con un @Input -->

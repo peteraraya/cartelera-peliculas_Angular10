@@ -1,0 +1,24 @@
+
+
+h3{
+    font-size: 15px;
+}
+
+.poster{
+    border-radius: 12px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+    margin: 5px;
+    cursor: pointer;
+}
+
+
+.cursor{
+    cursor: pointer;
+   
+}
+
+.poster:hover{
+    z-index: 13;
+    box-shadow:  -1px 0px 10px -1px #40f0e7 !important;
+    padding: 0.3px;
+}
