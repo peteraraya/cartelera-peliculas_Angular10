@@ -30,7 +30,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forRoot( routes ) // Ruta principal
+    RouterModule.forRoot( routes, { useHash: true } ) // Ruta principal
   ],
   exports: [
     RouterModule
