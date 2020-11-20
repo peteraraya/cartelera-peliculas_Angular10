@@ -11,7 +11,7 @@ export class CastSlideshowComponent implements OnInit, AfterViewInit {
 
 
   @Input() cast: Cast[];
-
+  public swipper: Swiper;
   constructor() { }
 
   ngOnInit(): void {
@@ -19,11 +19,20 @@ export class CastSlideshowComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void{
-    const swiper = new Swiper('.swiper-container', {
-      slidesPerView: 5.3,
+    const mySwiper  = new Swiper('.swiper-container', {
+      slidesPerView: 4.3,
       freeMode: true,
-      spaceBetween: 15
+      spaceBetween: 15,
+
     });
+    this.swipper = mySwiper;
   }
 
+  onSlideNext() {
+    this.swipper.slideNext();
+  }
+
+  onSlidePrev() {
+    this.swipper.slidePrev();
+  }
 }
